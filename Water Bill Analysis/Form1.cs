@@ -16,26 +16,24 @@ namespace Water_Bill_Analysis
         {
             InitializeComponent();
         }
-
-        private void btnCalculate_Click(object sender, EventArgs e)
-        {
-            int[] amountOfBills = new int[4]; // Create an array called amountOfBills
-              
-            for (int i = 0; i < amountOfBills.Length; i++)
-                amountOfBills[i] = i;
-            int[] total = total + amountOfBills;
-            int[] average = total / 4;
-
-        }
-
-             
-        
-
+                  
         private void lblThirdQuarter_Click(object sender, EventArgs e)
         {
 
         }
 
-        
+        private void btnCalculate_Click_1(object sender, EventArgs e)
+        {
+            string[] quarters = {"first quarter", "second quarter", "third quarter", "fourth quarter" };
+            foreach(string i in quarters) 
+            
+            {
+                lblFirstQuarter(Convert.ToInt32(i));//change data type from text to integer using convert method
+                lblSecondQuarter(Convert.ToInt32(i));
+                lblThirdQuarter(Convert.ToInt32(i));
+                lblFourthQuarter(Convert.ToInt32(i));
+            }
+
+        }
     }
 }
