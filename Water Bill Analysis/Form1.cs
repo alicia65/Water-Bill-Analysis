@@ -12,11 +12,22 @@ namespace Water_Bill_Analysis
 {
     public partial class Form1 : Form
     {
+        double[] quarterLists = new double[4];// Create new arrary to store data
+        double firstQuarter = 0;
+        double secondQuarter = 0;
+        double thirdQuarter = 0;
+        double fourthQuarter = 0;
+        double billTotal = 0;
+        double billAverage = 0;
         public Form1()
         {
             InitializeComponent();
-        }
-                  
+            getTotals(billTotal);
+            getAverage(billAverage);
+
+        }        
+
+                                  
         private void lblThirdQuarter_Click(object sender, EventArgs e)
         {
 
@@ -24,54 +35,48 @@ namespace Water_Bill_Analysis
 
         private void btnCalculate_Click_1(object sender, EventArgs e)
         {
+            txtFirstQuarter.Clear();
+            txtSecondQuarter.Clear();
+            txtThirdQuarter.Clear();
+            txtFourthQuarter.Clear();
+
             
-            double[] quarters = new double[4];
-            foreach(double i in quarters) 
             
+
+            firstQuarter = double.Parse(txtFirstQuarter.Text);
+            secondQuarter = double.Parse(txtSecondQuarter);
+            thirdQuarter = double.Parse(txtThirdQuarter.Text);
+            fourthQuarter = double.Parse(txtFourthQuarter.Text);
+
+            for(double i = 0; i < 4; i++) 
             {
-                lblFirstQuarter(Convert.ToDouble(i));//change data type from text to integer using convert method
-                MessageBox.Show(txtFirstQuarter);
-
-                lblSecondQuarter(Convert.ToDouble(i));
-                MessageBox.Show(txtSecondQuarter);
-                
-                lblThirdQuarter(Convert.ToDouble(i));
-                MessageBox.Show(txtThirdQuarter);
-                
-                lblFourthQuarter(Convert.ToDouble(i));
-                MessageBox.Show(txtFourthQuarter);
-                                       
-                   
+                quarterLists[i] = i + 1;
+                txtTotal.Text = double.Parse(quarterLists[i]);
             }
+           
+            
 
-            getBillAverage();//Call method to get average
-            getBillTotals();// Call method to get totals
 
         }
 
-        public void getBillTotals(double t) 
+        
+
+        public void getTotals(double bill) 
         {
-            double[] quarters = new double[4];
-            t = 0;
-            for (double k = 0; k< quarters.Length; k++)
-                t += quarters[k];
-            txtTotal.Text = t;
+            if (billTotal == bill)
+            {
+                billTotal = quarterLists[i]; 
+            }
+
         }
 
-        public void getBillAverage(double average) 
+        public void getAverage(double average)
         {
-            double[] quarters = new double[4];
-            average = 0;
-            if (average > 0)
+            if(billAverage == average) 
             {
-                average = quarters[0] + quarters[1] + quarters[2] + quarters[3] / quarters.Length;
-                txtAverage.Text = TryParse.ToDouble(average);
+                txtAverage.Text = double.Parse(quarterLists / 4);
             }
-            else 
-            {
-                MessageBox.Show("Try again", "error");
-            }
-        }
+        }    
         
     }
 }
