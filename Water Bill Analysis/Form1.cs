@@ -78,10 +78,13 @@ namespace Water_Bill_Analysis
        
         public void getAverage(double average)
         {
-            if(billAverage == average) 
+            if (billAverage == average)
             {
-                txtAverage.Text = double.Parse(total/quarterLists.Length);// Display average  bill on text box 
+                txtAverage.Text = double.Parse(total / quarterLists.Length);// Display average  bill on text box 
             }
+
+            else
+                return;
             
         }
 
