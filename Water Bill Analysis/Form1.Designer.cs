@@ -69,7 +69,7 @@
             this.lblThirdQuarter.TabIndex = 2;
             this.lblThirdQuarter.Text = "Third Quarter";
             this.lblThirdQuarter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblThirdQuarter.Click += new System.EventHandler(this.lblThirdQuarter_Click);
+            
             // 
             // lblFourthQuarter
             // 
@@ -172,6 +172,7 @@
             this.Controls.Add(this.lblFirstQuarter);
             this.Name = "Form1";
             this.Text = "Average Quarterly Bill";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
