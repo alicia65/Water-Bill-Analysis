@@ -82,7 +82,7 @@ namespace Water_Bill_Analysis
             double sum = 0;
             for (int i = 0; i < quarterLists.Length; i++)
                 sum += quarterLists[i];
-            double average = sum/ quarterLists.Length;
+            double average = sum/quarterLists.Length; // calculate average by dividing sum with arrary list
 
             txtAverage.Text = "$" + average; // Display average  bill on text box 
 
