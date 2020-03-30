@@ -53,7 +53,7 @@ namespace Water_Bill_Analysis
             quarterLists[3] = fourthQuarter;
 
             getTotals(quarterLists);//call method to compute the total
-            getAverage(billAverage);// call method to get average
+            getAverage();// call method to get average
         }
 
         public bool IsPresent(TextBox textBox, string name)
@@ -73,20 +73,24 @@ namespace Water_Bill_Analysis
             double total = 0;
             for (int i = 0; i < quarterLists.Length; i++)
                 total += quarterLists[i];//add 4 bills in the array 
-            txtTotal.Text = double.Parse(bill);//display total on text box total
-        }          
-       
-        public void getAverage(double average)
-        {
-            if (billAverage == average)
-            {
-                txtAverage.Text = double.Parse(total / quarterLists.Length);// Display average  bill on text box 
-            }
-
-            else
-                return;
-            
+            txtTotal.Text = "$" + total; //display total on text box total
         }
+
+        public void getAverage()
+        {
+            
+            double sum = 0;
+            for (int i = 0; i < quarterLists.Length; i++)
+                sum += quarterLists[i];
+            double average = sum/ quarterLists.Length;
+
+            txtAverage.Text = "$" + average; // Display average  bill on text box 
+
+        }
+
+
+
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
