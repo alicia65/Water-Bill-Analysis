@@ -24,7 +24,9 @@ namespace Water_Bill_Analysis
         public double ThirdQuarter { get; set; }
         public double FourthQuarter { get; set; }
 
-
+        //Create Bill ojbect for four fields
+        
+        
     }
 }
 

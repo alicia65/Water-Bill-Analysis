@@ -21,6 +21,9 @@ namespace Water_Bill_Analysis
         double fourthQuarter = 0.0;
         double billTotal = 0.0;
         double billAverage = 0.0;
+
+        WaterBillAnalysis wBillAnalysis = new WaterBillAnalysis();
+
         public Form1()
         {
             InitializeComponent();
@@ -31,6 +34,12 @@ namespace Water_Bill_Analysis
 
         private void btnCalculate_Click_1(object sender, EventArgs e)
         {
+           
+
+            // Create bill object for four text fields
+            List<Bill> billOjb = new List<Bill>();
+
+                       
             //Read the numbers from the four TextBoxes
             try
             {
@@ -53,8 +62,8 @@ namespace Water_Bill_Analysis
             quarterLists[2] = thirdQuarter;
             quarterLists[3] = fourthQuarter;
 
-            getTotals(quarterLists);//call method to compute the total
-            getAverage();// call method to get average
+            wBillAnalysis.getTotals(quarterLists);//call method to compute the total
+            wBillAnalysis.getAverage();// call method to get average
         }
 
         public bool IsPresent(TextBox textBox, string name)
@@ -68,27 +77,7 @@ namespace Water_Bill_Analysis
             }
             return true;
         }
-
-        public void getTotals(double[] bill)
-        {
-            double total = 0;
-            for (int i = 0; i < quarterLists.Length; i++)
-                total += quarterLists[i];//add 4 bills in the array 
-            txtTotal.Text = "$" + total; //display total on text box total
-        }
-
-        public void getAverage()
-        {
-            
-            double sum = 0;
-            for (int i = 0; i < quarterLists.Length; i++)
-                sum += quarterLists[i];
-            double average = sum/quarterLists.Length; // calculate average by dividing sum with arrary list
-
-            txtAverage.Text = "$" + average; // Display average  bill on text box 
-
-        }
-                
+                   
         private void Form1_Load(object sender, EventArgs e)
         {
 
