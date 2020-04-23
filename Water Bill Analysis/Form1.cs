@@ -57,13 +57,22 @@ namespace Water_Bill_Analysis
             }
 
             // add 4 bills into the array called quarterList and place them in index orders
-            quarterLists[0] = firstQuarter;
-            quarterLists[1] = secondQuarter;
-            quarterLists[2] = thirdQuarter;
-            quarterLists[3] = fourthQuarter;
+            //quarterLists[0] = firstQuarter;
+            //quarterLists[1] = secondQuarter;
+            //quarterLists[2] = thirdQuarter;
+            //quarterLists[3] = fourthQuarter;
 
-            wBillAnalysis.getTotals(quarterLists);//call method to compute the total
-            wBillAnalysis.getAverage();// call method to get average
+            // Make Bill objects, one for each quarter 
+            Bill q1 = new Bill("First Quarter", firstQuarter);
+            // etc. 
+
+            wBillAnalysis.AllBills.Add(q1);
+            // etc. 
+
+
+           // wBillAnalysis.getTotals();//call method to compute the total
+            double average = wBillAnalysis.getAverage();// call method to get average
+            txtAverage.Text = average.ToString();
         }
 
         public bool IsPresent(TextBox textBox, string name)

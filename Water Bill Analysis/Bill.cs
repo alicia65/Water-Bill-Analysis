@@ -9,21 +9,19 @@ namespace Water_Bill_Analysis
 {
     class Bill
     {
+        /*Create a new class called Bill.  A bill object will store the name of the 
+         * billing period, for example, "First quarter", and the amount of the bill. 
+         * Store this data in properties with descriptive names.  */
+
         //Create constructor
-        public Bill(double firstQuarter, double secondQuarter, double thirdQuarter, double fourthQuarter)
+        public Bill(string billingPeriod, double amount )
         {
-            FirstQuarter = firstQuarter;
-            SecondQuarter = secondQuarter;
-            ThirdQuarter = thirdQuarter;
-            FourthQuarter = fourthQuarter;
+            BillingPeriod = billingPeriod;
         }
 
         // Auto Preperties
-        public double FirstQuarter { get; set; }
-        public double SecondQuarter { get; set; }
-        public double ThirdQuarter { get; set; }
-        public double FourthQuarter { get; set; }
-
+        public string BillingPeriod { get; set; }   // "First Quarter"
+        public double Amount { get; set; }     // for example 40 for $40
         //Create Bill ojbect for four fields
         
         
