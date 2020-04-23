@@ -11,23 +11,29 @@ namespace Water_Bill_Analysis
     {
         public WaterBillAnalysis(double average, double total)
         {
-            Average = average;
-
+          
         }
       
         //Properties
         public string average { get; set; }
         public string total { get; set; }
 
-        public void getAverage()
+        public List<Bill> AllBills { get; set; }
+
+        public double getAverage()
         {
-
             double sum = 0;
-            for (int i = 0; i < quarterLists.Length; i++)
-                sum += quarterLists[i];
-            double average = sum / quarterLists.Length; // calculate average by dividing sum with arrary list
+            for (int i = 0; i < AllBills.Count; i++) 
+            {
+               sum += quarterLists[i];
+                // add on each Bill's amount to the sum
+            }
 
-            txtAverage.Text = "$" + average; // Display average  bill on text box 
+            double average = sum / AllBills.Count; // calculate average by dividing sum with arrary list
+
+            //txtAverage.Text = "$" + average; // Display average  bill on text box 
+
+            return average;
 
         }
 

@@ -10,23 +10,16 @@ namespace Water_Bill_Analysis
     class Bill
     {
         //Create constructor
-        public Bill(double firstQuarter, double secondQuarter, double thirdQuarter, double fourthQuarter)
+        public Bill(string billingPeriod, double amount)
         {
-            FirstQuarter = firstQuarter;
-            SecondQuarter = secondQuarter;
-            ThirdQuarter = thirdQuarter;
-            FourthQuarter = fourthQuarter;
+            BillingPeriod = billingPeriod;
+            Amount = amount;
         }
 
         // Auto Preperties
-        public double FirstQuarter { get; set; }
-        public double SecondQuarter { get; set; }
-        public double ThirdQuarter { get; set; }
-        public double FourthQuarter { get; set; }
-
-        //Create Bill ojbect for four fields
-        
-        
+        public string BillingPeriod { get; set; }
+        public double Amount { get; set; }
+                         
     }
 }
 

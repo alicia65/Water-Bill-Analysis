@@ -27,7 +27,6 @@ namespace Water_Bill_Analysis
         public Form1()
         {
             InitializeComponent();
-
             
         }
 
@@ -35,7 +34,6 @@ namespace Water_Bill_Analysis
         private void btnCalculate_Click_1(object sender, EventArgs e)
         {
            
-
             // Create bill object for four text fields
             List<Bill> billOjb = new List<Bill>();
 
@@ -56,14 +54,19 @@ namespace Water_Bill_Analysis
                     "Invalid numberic format. Please check all entries.", "Entry Error");
             }
 
-            // add 4 bills into the array called quarterList and place them in index orders
-            quarterLists[0] = firstQuarter;
-            quarterLists[1] = secondQuarter;
-            quarterLists[2] = thirdQuarter;
-            quarterLists[3] = fourthQuarter;
+            //Make Bill objects, one for each quarter
+            Bill q1 = new Bill("First Quarter", firstQuarter);
+            Bill q2 = new Bill("Second Quarter", secondQuarter);
+            Bill q3 = new Bill("Third Quarter", thirdQuarter);
+            Bill q4 = new Bill("Fourth Quarter", fourthQuarter);
 
-            wBillAnalysis.getTotals(quarterLists);//call method to compute the total
-            wBillAnalysis.getAverage();// call method to get average
+            wBillAnalysis.AllBills.Add(q1);
+            wBillAnalysis.AllBills.Add(q2);
+            wBillAnalysis.AllBills.Add(q3);
+            wBillAnalysis.AllBills.Add(q4);
+
+            double average = wBillAnalysis.getAverage();// call method to get average
+            txtAverage.Text = average.ToString();
         }
 
         public bool IsPresent(TextBox textBox, string name)
